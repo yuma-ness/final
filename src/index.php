@@ -1,13 +1,22 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
 <div class="main">
-<link rel="stylesheet" href="css/login_input.css">
-<img class="main-image" src="image/wakadan.jpg">
+
 <!-- <form action="login_output.php" method="post"> -->
-    <p class="main-a">暗号通貨のポートフォリオ</p>
+    <h1 class="main-a">暗号通貨のポートフォリオ</h1>
 <a href="itiran-input.php"><button>一覧</button></a>
-<a href="touroku-input.php"><button>登録</button></a>
-<a href="kousin-input.php"><button>更新</button></a>
-<a href="delete-input.php"><button>削除</button></a>
+<a href="insert-input.php"><button>登録</button></a>
+<!-- <a href="edit.php"><button>更新</button></a> -->
+<a href="delete-input.php"><button>編集＆削除</button></a>
+
 
 </div>
-<?php require 'footer.php'; ?>    
+</body>
+</html>
