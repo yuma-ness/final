@@ -16,6 +16,19 @@
     <p class="main-a">_____________________________________</p>
     <p class="main-a">枚数：　　　<input type="number" min="0.1" step="0.1" name="m"><br></p>
     <p class="main-a">_____________________________________</p>
+
+    <?php require 'db-connect.php'; ?>
+    種類：<select name="s">
+<?php
+$pdo=new PDO($connect, USER, PASS);
+$sql=$pdo->query('select * from kate ');//プルだううん
+foreach ($sql as $row) {
+echo '<option value="', $row['KID'], '">',$row['K.name'],'</option>';
+        }
+?>
+</select>
+<p class="main-a">_____________________________________</p>
+    
     <a href="insert-output.php"><button>追加</button></a>
 </form>
 
