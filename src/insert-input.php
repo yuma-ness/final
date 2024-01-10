@@ -12,7 +12,7 @@
 <a href="index.php">トップページへ</a>
 </div>
 <form action="insert-output.php" method="post">
-<p class="main-a">通貨名：　　　<input type="text" name="t"><br></p>
+<p class="main-a">  通貨名：　　　<input type="text" name="t"><br></p>
     <p class="main-a">_____________________________________</p>
     <p class="main-a">枚数：　　　<input type="number" min="0.1" step="0.1" name="m"><br></p>
     <p class="main-a">_____________________________________</p>
