@@ -4,20 +4,21 @@
 <html lang="ja">
 	<head>
 		<meta charset="UTF-8">
-		<title>リスト１－２</title>
+		<title>商品編集画面</title>
 	</head>
 	<body>
 <?php
+echo $_POST['n'],$_POST['c'],$_POST['s'],$_POST['i'];
 $pdo=new PDO($connect,USER,PASS);
-    $sql=$pdo->prepare('update tuuka set name=?,count=? where ID=?');
+    $sql=$pdo->prepare('update tuuka set name=?,count=? KID=? where ID=?');
 
     if (empty($_POST['n'])) {
         echo '商品名を入力してください。';
     } else
-    if (!preg_match('/[0-9]+/', $_POST['c'])) {
+    if (!preg_match('/[0-2000]+/', $_POST['c'])) {
         echo '枚数を整数で入力してください。';
 
-    } else if($sql->execute([htmlspecialchars($_POST['n']),$_POST['c'],$_POST['i']])){
+    } else if($sql->execute($_POST['n'],$_POST['c'],$_POST['s'],$_POST['i'])){
         echo '更新に成功しました。';
     }else {
         echo '更新に失敗しました。';

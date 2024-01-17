@@ -13,5 +13,5 @@ $sql = $pdo->prepare('insert into tuuka(name,count,KID) values(?,?,?)');
 $sql->execute([$t,$m,$s]);
 
 echo '<br>';
-echo '通貨名',$t,'：',$m,'枚','が追加されました';
+echo '通貨名',$t,'：',$m,'枚：',$s,'が追加されました';
 ?>

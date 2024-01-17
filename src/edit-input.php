@@ -11,7 +11,7 @@
 
 <?php
     $pdo=new PDO($connect, USER, PASS);
-	$sql=$pdo->prepare('select * from tuuka where ID=?');
+	$sql=$pdo->prepare('select * from tuuka left join kate on tuuka.KID=kate.KID where ID=?');
 	$sql->execute([$_POST['id']]);
 
 	foreach ($sql as $row) {
@@ -28,6 +28,18 @@
 		echo '<td>';
 		echo '枚数',' <input type="text" name="c" value="', $row['count'], '">','<br>';
 		echo '</td> ';
+
+		echo '<td>';
+		echo '種類：<select name="s">';
+		$sql=$pdo->query('select * from kate ');//プルだううん
+		foreach ($sql as $row) {
+		echo '<option value="', $row['KID'], '">',$row['K.name'],'</option>';
+        	}
+		echo '</select>';
+		echo '</td>';
+		//echo '<td>';
+		//echo '種類',' <input type="text" name="s" value="', $row['K.name'], '">','<br>';
+		//echo '</td> ';
 		
 		
 		echo '</div> ';
@@ -38,6 +50,6 @@
 	}
 ?>
 </table>
-<div><button id="button3" onclick="location.href='index.php'">トップへ戻る</button></div>
+<div><button id="button3" onclick="location.href='index.php'">トップページへ</button></div>
     </body>
 </html>
